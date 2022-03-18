@@ -1,1 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="2lmbZ13t)i@-zpK9_$o_" x="0" y="0"></block></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="U`ZC$D`4.i#9R~3C8S_H">mySprite</variable></variables><block type="pxt-on-start" id="2lmbZ13t)i@-zpK9_$o_" x="0" y="0"><statement name="HANDLER"><block type="gamesetbackgroundcolor" id="yakn^~;8K|j-3?dBSX*9"><value name="color"><shadow type="colorindexpicker" id="TJ]`S)=?K[s}=2#Rj?OB"><field name="index">10</field></shadow></value></block></statement></block></xml>
