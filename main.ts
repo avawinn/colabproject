@@ -29,44 +29,82 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     myDart.throwDart()
 })
 function level3 () {
-    mySprite3 = sprites.create(img`
+    obstacle4 = sprites.createProjectileFromSide(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . c c . . . . . . . 
-        . . . . c a a a a . . . . . . . 
-        . . . . a a f f b a . . . . . . 
-        . . . c a b f f c b . . . . . . 
-        . . . c b b b a f c b . . . . . 
-        . . . c b a c a b b b . . . . . 
-        . . . . b b f f a a c . . . . . 
-        . . . . . a a b b c . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Enemy)
-    mySprite3.setPosition(75, 35)
-    mySprite4 = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . c c c . . . . . . 
+        . . . . . . a b a a . . . . . . 
+        . . . . . c b a f c a c . . . . 
+        . . . . c b b b f f a c c . . . 
+        . . . . b b f a b b a a c . . . 
+        . . . . c b f f b a f c a . . . 
+        . . . . . c a a c b b a . . . . 
+        . . . . . . c c c c . . . . . . 
         . . . . . . . c . . . . . . . . 
-        . . . . c a a a c . . . . . . . 
-        . . . c c f a b b c . . . . . . 
-        . . . b f f b f a a . . . . . . 
-        . . . b b a b f f a . . . . . . 
-        . . . c b f b b a c . . . . . . 
-        . . . . b a f c c . . . . . . . 
-        . . . . . b b c . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Enemy)
-    mySprite4.setPosition(93, 83)
+        `, -81, 30)
+    obstacle4.setBounceOnWall(true)
+    obstacle5 = sprites.createProjectileFromSide(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . c c c . . . . . . 
+        . . . . . . a b a a . . . . . . 
+        . . . . . c b a f c a c . . . . 
+        . . . . c b b b f f a c c . . . 
+        . . . . b b f a b b a a c . . . 
+        . . . . c b f f b a f c a . . . 
+        . . . . . c a a c b b a . . . . 
+        . . . . . . c c c c . . . . . . 
+        . . . . . . . c . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, 89, 80)
+    obstacle5.setBounceOnWall(true)
+    obstacle6 = sprites.createProjectileFromSide(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . c c c . . . . . . 
+        . . . . . . a b a a . . . . . . 
+        . . . . . c b a f c a c . . . . 
+        . . . . c b b b f f a c c . . . 
+        . . . . b b f a b b a a c . . . 
+        . . . . c b f f b a f c a . . . 
+        . . . . . c a a c b b a . . . . 
+        . . . . . . c c c c . . . . . . 
+        . . . . . . . c . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, -50, 81)
+    obstacle6.setBounceOnWall(true)
+    obstacle7 = sprites.createProjectileFromSide(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . c c c . . . . . . 
+        . . . . . . a b a a . . . . . . 
+        . . . . . c b a f c a c . . . . 
+        . . . . c b b b f f a c c . . . 
+        . . . . b b f a b b a a c . . . 
+        . . . . c b f f b a f c a . . . 
+        . . . . . c a a c b b a . . . . 
+        . . . . . . c c c c . . . . . . 
+        . . . . . . . c . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, 27, 76)
+    obstacle7.setBounceOnWall(true)
 }
 function level2 () {
     mySprite2 = sprites.create(img`
@@ -111,12 +149,20 @@ function footballDart () {
     myDart.setTrace()
     myDart.controlWithArrowKeys()
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.over(false)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.goal, function (sprite, otherSprite) {
+    game.over(true)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.over(false)
 })
 let mySprite2: Sprite = null
-let mySprite4: Sprite = null
-let mySprite3: Sprite = null
+let obstacle7: Sprite = null
+let obstacle6: Sprite = null
+let obstacle5: Sprite = null
+let obstacle4: Sprite = null
 let myDart: Dart = null
 let level = 0
 let gametype = game.askForString("Do you want to play soccer or football? Enter s or f.", 1)
