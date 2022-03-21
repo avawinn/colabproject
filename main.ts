@@ -21,7 +21,7 @@ function soccerDart () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.soccerBall)
+        `, SpriteKind.Player)
     soccerball.setTrace()
     soccerball.controlWithArrowKeys()
 }
@@ -104,10 +104,13 @@ function footballDart () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.football)
+        `, SpriteKind.Player)
     football.setTrace()
     football.controlWithArrowKeys()
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    game.over(false)
+})
 let football: Dart = null
 let mySprite2: Sprite = null
 let mySprite4: Sprite = null
@@ -294,20 +297,20 @@ if (gametype == "s") {
     level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
     soccerDart()
     if (level == "1") {
-    	
+        level1()
     } else if (level == "2") {
-    	
+        level2()
     } else {
-    	
+        level3()
     }
 } else {
     level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
     footballDart()
     if (level == "1") {
-    	
+        level1()
     } else if (level == "2") {
-    	
+        level2()
     } else {
-    	
+        level3()
     }
 }
