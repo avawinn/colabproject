@@ -1,6 +1,15 @@
 namespace SpriteKind {
     export const goal = SpriteKind.create()
 }
+function level1 () {
+	
+}
+function level3 () {
+	
+}
+function level2 () {
+	
+}
 let football: Dart = null
 let soccerball: Dart = null
 let level = ""
@@ -182,7 +191,9 @@ let mySprite = sprites.create(img`
 mySprite.setPosition(135, 60)
 if (gametype == "s") {
     level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
-    if (true) {
+    if (level == "1") {
+    	
+    } else if (level == "2") {
     	
     } else {
     	
