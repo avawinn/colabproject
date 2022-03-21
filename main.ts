@@ -1,15 +1,70 @@
 namespace SpriteKind {
     export const goal = SpriteKind.create()
 }
-function level1 () {
-	
-}
 function level3 () {
-	
+    obstacle2 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . c . . . . . . . . 
+        . . . . c a a a c . . . . . . . 
+        . . . c c f a b b c . . . . . . 
+        . . . b f f b f a a . . . . . . 
+        . . . b b a b f f a . . . . . . 
+        . . . c b f b b a c . . . . . . 
+        . . . . b a f c c . . . . . . . 
+        . . . . . b b c . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    obstacle2.setPosition(73, 38)
+    obstacle3 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . c c . . . . . . 
+        . . . . . c a a a a . . . . . . 
+        . . . . . a a f f b a . . . . . 
+        . . . . c a b f f c b . . . . . 
+        . . . . c b b b a f c b . . . . 
+        . . . . c b a c a b b b . . . . 
+        . . . . . b b f f a a c . . . . 
+        . . . . . . a a b b c . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    obstacle3.setPosition(79, 79)
 }
 function level2 () {
-	
+    obstacle1 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . c . . . . . . . . 
+        . . . . c a a a c . . . . . . . 
+        . . . c c f a b b c . . . . . . 
+        . . . b f f b f a a . . . . . . 
+        . . . b b a b f f a . . . . . . 
+        . . . c b f b b a c . . . . . . 
+        . . . . b a f c c . . . . . . . 
+        . . . . . b b c . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    obstacle1.setPosition(75, 57)
 }
+let obstacle1: Sprite = null
+let obstacle3: Sprite = null
+let obstacle2: Sprite = null
 let football: Dart = null
 let soccerball: Dart = null
 let level = ""
@@ -194,9 +249,9 @@ if (gametype == "s") {
     if (level == "1") {
     	
     } else if (level == "2") {
-    	
+        level2()
     } else {
-    	
+        level3()
     }
     soccerball = darts.create(img`
         . . . . . . . . . . . . . . . . 
