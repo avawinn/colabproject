@@ -4,7 +4,7 @@ namespace SpriteKind {
     export const football = SpriteKind.create()
 }
 function soccerDart () {
-    soccerball = darts.create(img`
+    myDart = darts.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -22,9 +22,12 @@ function soccerDart () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Player)
-    soccerball.setTrace()
-    soccerball.controlWithArrowKeys()
+    myDart.setTrace()
+    myDart.controlWithArrowKeys()
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    myDart.throwDart()
+})
 function level3 () {
     mySprite3 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
@@ -87,7 +90,7 @@ function level2 () {
     mySprite2.setPosition(77, 55)
 }
 function footballDart () {
-    football2 = darts.create(img`
+    myDart = darts.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -105,19 +108,17 @@ function footballDart () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Player)
-    football2.setTrace()
-    football2.controlWithArrowKeys()
+    myDart.setTrace()
+    myDart.controlWithArrowKeys()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.over(false)
 })
-let football2: Dart = null
 let mySprite2: Sprite = null
 let mySprite4: Sprite = null
 let mySprite3: Sprite = null
-let soccerball: Dart = null
-let level = ""
-let mySprite: Sprite = null
+let myDart: Dart = null
+let level = 0
 let gametype = game.askForString("Do you want to play soccer or football? Enter s or f.", 1)
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -241,8 +242,7 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
-scene.cameraFollowSprite(mySprite)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
     ..................................................
     ..................................................
     ....................................11111111111111
@@ -296,21 +296,21 @@ mySprite = sprites.create(img`
     `, SpriteKind.goal)
 mySprite.setPosition(135, 60)
 if (gametype == "s") {
-    level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
+    level = game.askForNumber("What level do you want to play? Enter 1, 2, 3.", 1)
     soccerDart()
-    if (level == "1") {
-        level3()
-    } else if (level == "2") {
+    if (level == 1) {
+    	
+    } else if (level == 2) {
         level2()
     } else {
         level3()
     }
 } else {
-    level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
+    level = game.askForNumber("What level do you want to play? Enter 1, 2, 3.", 1)
     footballDart()
-    if (level == "1") {
-        level3()
-    } else if (level == "2") {
+    if (level == 1) {
+    	
+    } else if (level == 2) {
         level2()
     } else {
         level3()
