@@ -25,14 +25,66 @@ function soccerDart () {
     soccerball.setTrace()
     soccerball.controlWithArrowKeys()
 }
-function level1 () {
-	
-}
 function level3 () {
-	
+    mySprite3 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . c c . . . . . . . 
+        . . . . c a a a a . . . . . . . 
+        . . . . a a f f b a . . . . . . 
+        . . . c a b f f c b . . . . . . 
+        . . . c b b b a f c b . . . . . 
+        . . . c b a c a b b b . . . . . 
+        . . . . b b f f a a c . . . . . 
+        . . . . . a a b b c . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Enemy)
+    mySprite3.setPosition(75, 35)
+    mySprite4 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . c . . . . . . . . 
+        . . . . c a a a c . . . . . . . 
+        . . . c c f a b b c . . . . . . 
+        . . . b f f b f a a . . . . . . 
+        . . . b b a b f f a . . . . . . 
+        . . . c b f b b a c . . . . . . 
+        . . . . b a f c c . . . . . . . 
+        . . . . . b b c . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Enemy)
+    mySprite4.setPosition(93, 83)
 }
 function level2 () {
-	
+    mySprite2 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . c c . . . . . . 
+        . . . . . c a a a a . . . . . . 
+        . . . . . a a f f b a . . . . . 
+        . . . . c a b f f c b . . . . . 
+        . . . . c b b b a f c b . . . . 
+        . . . . c b a c a b b b . . . . 
+        . . . . . b b f f a a c . . . . 
+        . . . . . . a a b b c . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Enemy)
+    mySprite2.setPosition(77, 55)
 }
 function footballDart () {
     football = darts.create(img`
@@ -57,6 +109,9 @@ function footballDart () {
     football.controlWithArrowKeys()
 }
 let football: Dart = null
+let mySprite2: Sprite = null
+let mySprite4: Sprite = null
+let mySprite3: Sprite = null
 let soccerball: Dart = null
 let level = ""
 let gametype = game.askForString("Do you want to play soccer or football? Enter s or f.", 1)
