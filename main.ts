@@ -1,5 +1,29 @@
 namespace SpriteKind {
     export const goal = SpriteKind.create()
+    export const soccerBall = SpriteKind.create()
+    export const football = SpriteKind.create()
+}
+function soccerDart () {
+    soccerball = darts.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . 1 1 f f 1 1 1 . . . . . 
+        . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+        . . f f 1 1 1 1 1 1 f f 1 . . . 
+        . . f f 1 1 f f 1 1 f f 1 . . . 
+        . . 1 1 1 1 f f 1 1 1 1 1 . . . 
+        . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+        . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+        . . 1 f f 1 1 1 1 f f 1 1 . . . 
+        . . 1 f f 1 1 1 1 f f 1 1 . . . 
+        . . . 1 1 1 1 1 1 1 1 1 . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.soccerBall)
+    soccerball.setTrace()
+    soccerball.controlWithArrowKeys()
 }
 function level1 () {
 	
@@ -9,6 +33,28 @@ function level3 () {
 }
 function level2 () {
 	
+}
+function footballDart () {
+    football = darts.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e e e . . . . 
+        . . . e e e e e e e e e e . . . 
+        . . e e 1 e 1 e 1 e 1 e e e . . 
+        . e e 1 1 1 1 1 1 1 1 1 e e . . 
+        . e e e 1 e 1 e 1 e 1 e e e . . 
+        . . e e e e e e e e e e e . . . 
+        . . . e e e e e e e e e e . . . 
+        . . . . e e e e e e e e . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.football)
+    football.setTrace()
+    football.controlWithArrowKeys()
 }
 let football: Dart = null
 let soccerball: Dart = null
@@ -191,6 +237,7 @@ let mySprite = sprites.create(img`
 mySprite.setPosition(135, 60)
 if (gametype == "s") {
     level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
+    soccerDart()
     if (level == "1") {
     	
     } else if (level == "2") {
@@ -198,42 +245,14 @@ if (gametype == "s") {
     } else {
     	
     }
-    soccerball = darts.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . 1 1 f f 1 1 1 . . . . . 
-        . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
-        . . f f 1 1 1 1 1 1 f f 1 . . . 
-        . . f f 1 1 f f 1 1 f f 1 . . . 
-        . . 1 1 1 1 f f 1 1 1 1 1 . . . 
-        . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
-        . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
-        . . 1 f f 1 1 1 1 f f 1 1 . . . 
-        . . 1 f f 1 1 1 1 f f 1 1 . . . 
-        . . . 1 1 1 1 1 1 1 1 1 . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
 } else {
     level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
-    football = darts.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . e e e e e e e e . . . . 
-        . . . e e e e e e e e e e . . . 
-        . . e e 1 e 1 e 1 e 1 e e e . . 
-        . e e 1 1 1 1 1 1 1 1 1 e e . . 
-        . e e e 1 e 1 e 1 e 1 e e e . . 
-        . . e e e e e e e e e e e . . . 
-        . . . e e e e e e e e e e . . . 
-        . . . . e e e e e e e e . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+    footballDart()
+    if (level == "1") {
+    	
+    } else if (level == "2") {
+    	
+    } else {
+    	
+    }
 }
