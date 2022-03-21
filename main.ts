@@ -1,43 +1,10 @@
 namespace SpriteKind {
     export const goal = SpriteKind.create()
 }
-let soccerball = darts.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . 1 1 f f 1 1 1 . . . . . 
-    . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
-    . . f f 1 1 1 1 1 1 f f 1 . . . 
-    . . f f 1 1 f f 1 1 f f 1 . . . 
-    . . 1 1 1 1 f f 1 1 1 1 1 . . . 
-    . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
-    . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
-    . . 1 f f 1 1 1 1 f f 1 1 . . . 
-    . . 1 f f 1 1 1 1 f f 1 1 . . . 
-    . . . 1 1 1 1 1 1 1 1 1 . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
-let football = darts.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . e e e e e e e e . . . . 
-    . . . e e e e e e e e e e . . . 
-    . . e e 1 e 1 e 1 e 1 e e e . . 
-    . e e 1 1 1 1 1 1 1 1 1 e e . . 
-    . e e e 1 e 1 e 1 e 1 e e e . . 
-    . . e e e e e e e e e e e . . . 
-    . . . e e e e e e e e e e . . . 
-    . . . . e e e e e e e e . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
-let gametype = game.askForString("Do you want to play soccer or football?", 8)
+let football: Dart = null
+let soccerball: Dart = null
+let level = ""
+let gametype = game.askForString("Do you want to play soccer or football? Enter s or f.", 1)
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -213,8 +180,49 @@ let mySprite = sprites.create(img`
     ..................................................
     `, SpriteKind.goal)
 mySprite.setPosition(135, 60)
-if (gametype == "soccer") {
-	
+if (gametype == "s") {
+    level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
+    if (true) {
+    	
+    } else {
+    	
+    }
+    soccerball = darts.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . 1 1 f f 1 1 1 . . . . . 
+        . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+        . . f f 1 1 1 1 1 1 f f 1 . . . 
+        . . f f 1 1 f f 1 1 f f 1 . . . 
+        . . 1 1 1 1 f f 1 1 1 1 1 . . . 
+        . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+        . . 1 1 1 1 1 1 1 1 1 1 1 . . . 
+        . . 1 f f 1 1 1 1 f f 1 1 . . . 
+        . . 1 f f 1 1 1 1 f f 1 1 . . . 
+        . . . 1 1 1 1 1 1 1 1 1 . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
 } else {
-	
+    level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
+    football = darts.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . e e e e e e e e . . . . 
+        . . . e e e e e e e e e e . . . 
+        . . e e 1 e 1 e 1 e 1 e e e . . 
+        . e e 1 1 1 1 1 1 1 1 1 e e . . 
+        . e e e 1 e 1 e 1 e 1 e e e . . 
+        . . e e e e e e e e e e e . . . 
+        . . . e e e e e e e e e e . . . 
+        . . . . e e e e e e e e . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
 }
