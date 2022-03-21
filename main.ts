@@ -87,7 +87,7 @@ function level2 () {
     mySprite2.setPosition(77, 55)
 }
 function footballDart () {
-    football = darts.create(img`
+    football2 = darts.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -105,13 +105,13 @@ function footballDart () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Player)
-    football.setTrace()
-    football.controlWithArrowKeys()
+    football2.setTrace()
+    football2.controlWithArrowKeys()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.over(false)
 })
-let football: Dart = null
+let football2: Dart = null
 let mySprite2: Sprite = null
 let mySprite4: Sprite = null
 let mySprite3: Sprite = null
@@ -299,7 +299,7 @@ if (gametype == "s") {
     level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
     soccerDart()
     if (level == "1") {
-        level1()
+        level3()
     } else if (level == "2") {
         level2()
     } else {
@@ -309,7 +309,7 @@ if (gametype == "s") {
     level = game.askForString("What level do you want to play? Enter 1, 2, 3.", 1)
     footballDart()
     if (level == "1") {
-        level1()
+        level3()
     } else if (level == "2") {
         level2()
     } else {
